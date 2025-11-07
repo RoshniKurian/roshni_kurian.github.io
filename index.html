@@ -1,7 +1,6 @@
 <!-- ===== NAVIGATION BAR ===== -->
 <nav class="nav">
   <div class="container nav-inner">
-    <a href="#home" class="brand">Roshni Kurian<span class="dot">.</span></a>
     <ul class="nav-links">
       <li><a class="link" href="#about">About Me</a></li>
       <li><a class="link" href="#projects">Projects</a></li>
@@ -34,7 +33,7 @@ body {
 .nav {
   position: sticky;
   top: 0;
-  z-index: 50;
+  z-index: 100;
   background: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.85));
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--line);
@@ -50,28 +49,16 @@ body {
 /* Layout */
 .nav-inner {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   padding: 0.8rem 0;
-}
-
-/* Brand */
-.brand {
-  font-weight: 800;
-  font-size: 1.2rem;
-  letter-spacing: 0.2px;
-  color: var(--brand);
-  text-decoration: none;
-}
-.brand .dot {
-  color: var(--brand-2);
 }
 
 /* Links */
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 1rem;
+  gap: 1.2rem;
   margin: 0;
   padding: 0;
 }
@@ -80,14 +67,15 @@ body {
   color: var(--muted);
   font-weight: 600;
   font-size: 0.95rem;
-  padding: 0.45rem 0.75rem;
+  padding: 0.45rem 0.9rem;
   border-radius: 10px;
   transition: all 0.25s ease;
 }
 .nav-links a:hover,
 .nav-links a.active {
-  background: color-mix(in oklab, var(--brand) 15%, transparent);
+  background: color-mix(in oklab, var(--brand) 18%, transparent);
   color: var(--text);
+  border: 1px solid color-mix(in oklab, var(--brand) 25%, transparent);
 }
 
 /* Responsive */
