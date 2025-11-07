@@ -1,0 +1,462 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Roshni Kurian — Portfolio</title>
+  <meta name="description" content="Portfolio of Roshni Kurian — Data Engineer with experience in SQL, Python, HDFS, Hive, and analytics tooling (Excel, Power BI, SPSS, A/B testing)." />
+  <meta name="theme-color" content="#0f2a55" />
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+
+  <style>
+    /* ===== Base / Theme ===== */
+    :root{
+      --bg:#ffffff;
+      --text:#0b1220;
+      --muted:#5b6574;
+      --line:#e7eaf0;
+      --card:#ffffff;
+      --accent:#0f2a55;         /* formal navy */
+      --accent-2:#2b6cb0;       /* softer blue for hovers */
+      --radius:14px;
+      --shadow:0 10px 24px rgba(15,42,85,.06);
+      --maxw:1060px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0; background:var(--bg); color:var(--text);
+      font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+    }
+    a{color:inherit; text-decoration:none}
+    img{max-width:100%; display:block}
+    .container{max-width:var(--maxw); margin:0 auto; padding:0 1.2rem}
+    section{padding:4rem 0; border-top:1px solid var(--line)}
+    h1,h2,h3{margin:0; letter-spacing:.2px}
+    h2{font-size:clamp(1.2rem,2.5vw,1.6rem); margin-bottom:.6rem}
+    .sub{color:var(--muted); margin:.2rem 0 1.2rem}
+    .eyebrow{color:var(--accent); font-weight:700; letter-spacing:.4px; text-transform:uppercase; font-size:.78rem}
+
+    /* ===== Nav ===== */
+    .nav{
+      position:sticky; top:0; z-index:50;
+      background:rgba(255,255,255,.9);
+      border-bottom:1px solid var(--line);
+      backdrop-filter:saturate(120%) blur(8px);
+    }
+    .nav-row{
+      display:flex; align-items:center; justify-content:space-between; gap:.8rem;
+      padding:.8rem 0;
+    }
+    .brand{
+      display:flex; align-items:flex-start; gap:.6rem;
+    }
+    .brand h1{font-size:1.05rem; font-weight:800}
+    .brand small{display:block; color:var(--muted); font-size:.85rem}
+    .links{display:flex; align-items:center; gap:.2rem; flex-wrap:wrap}
+    .links a{
+      padding:.5rem .7rem; border-radius:10px; color:var(--muted); font-weight:600;
+    }
+    .links a:hover, .links a.active{color:var(--text); background:#f5f7fb}
+    .menu{display:none}
+    @media (max-width:860px){
+      .links{display:none}
+      .menu{display:inline-grid; place-items:center; padding:.5rem .7rem; border:1px solid var(--line); border-radius:10px; cursor:pointer}
+      .drawer{display:none; border-top:1px solid var(--line)}
+      .drawer.open{display:block}
+      .drawer a{display:block; padding:.9rem 0; color:var(--muted); border-bottom:1px solid var(--line)}
+      .drawer a:hover{color:var(--text)}
+    }
+
+    /* ===== Hero ===== */
+    header.hero{padding:3.8rem 0 2.4rem}
+    .hero-grid{display:grid; grid-template-columns:1.6fr .8fr; gap:2rem; align-items:center}
+    @media (max-width:980px){.hero-grid{grid-template-columns:1fr}}
+    .title{
+      font-size:clamp(1.8rem,4.8vw,2.6rem); line-height:1.08; font-weight:800;
+      background:linear-gradient(90deg, #0f2a55, #2b6cb0 60%, #6da8e6);
+      -webkit-background-clip:text; background-clip:text; color:transparent;
+      margin:.2rem 0 .6rem;
+    }
+    .lede{color:var(--muted); font-size:1.05rem}
+    .hero-actions{display:flex; gap:.6rem; flex-wrap:wrap; margin-top:1rem}
+    .btn{
+      display:inline-grid; place-items:center; padding:.7rem 1rem; font-weight:700; border-radius:12px; border:1px solid var(--line);
+      background:#0f2a55; color:#fff; box-shadow:var(--shadow); transition:transform .12s ease, background .12s ease;
+    }
+    .btn:hover{transform:translateY(-2px); background:#153764}
+    .btn.secondary{background:#fff; color:var(--accent); border-color:#dfe4ea}
+    .btn.secondary:hover{background:#f6f8fb}
+
+    .facts{display:grid; grid-template-columns:repeat(3,1fr); gap:.8rem; margin-top:1.1rem}
+    .fact{border:1px solid var(--line); border-radius:12px; padding:.9rem; text-align:center; background:#fff}
+    .fact .n{font-weight:800; color:var(--accent); font-size:1.15rem}
+
+    .hero-card{
+      border:1px solid var(--line); border-radius:16px; padding:1.1rem; background:var(--card); box-shadow:var(--shadow)
+    }
+    .kv{display:flex; flex-wrap:wrap; gap:.5rem}
+    .kv span{padding:.35rem .6rem; border-radius:999px; background:#f5f7fb; color:#334155; font-size:.85rem; font-weight:600}
+
+    /* ===== Grids & cards ===== */
+    .grid-3{display:grid; gap:1rem; grid-template-columns:repeat(3,1fr)}
+    @media (max-width:980px){.grid-3{grid-template-columns:1fr 1fr}}
+    @media (max-width:640px){.grid-3{grid-template-columns:1fr}}
+    .card{
+      border:1px solid var(--line); border-radius:14px; padding:1.1rem; background:var(--card); box-shadow:var(--shadow);
+      transition:transform .16s ease, box-shadow .16s ease;
+    }
+    .card:hover{transform:translateY(-4px); box-shadow:0 16px 34px rgba(15,42,85,.10)}
+    .chips{display:flex; gap:.5rem; flex-wrap:wrap; margin-top:.5rem}
+    .chip{padding:.35rem .6rem; border-radius:999px; background:#f5f7fb; color:#334155; font-size:.85rem; font-weight:600}
+
+    /* ===== Project cards ===== */
+    .thumb{border:1px solid var(--line); border-radius:12px; overflow:hidden; background:#f7f9fc; aspect-ratio:16/9}
+    .p-meta{color:var(--muted); font-size:.95rem}
+
+    /* ===== Lists ===== */
+    ul.clean{margin:.3rem 0 0; padding-left:1.1rem}
+    ul.clean li{margin:.35rem 0}
+
+    /* ===== Footer ===== */
+    footer{padding:2rem 0; border-top:1px solid var(--line); color:var(--muted); font-size:.95rem; text-align:center}
+
+    /* ===== Focus visibility ===== */
+    :focus-visible{outline:2px solid #6da8e6; outline-offset:3px; border-radius:8px}
+  </style>
+</head>
+<body>
+
+  <!-- ===== Nav ===== -->
+  <nav class="nav" aria-label="Primary">
+    <div class="container nav-row">
+      <div class="brand">
+        <div>
+          <h1>Roshni Kurian</h1>
+          <small>Data Engineer · SQL · Python · HDFS/Hive</small>
+        </div>
+      </div>
+
+      <button class="menu" aria-controls="drawer" aria-expanded="false" id="menuBtn">Menu ▾</button>
+
+      <div class="links" role="navigation" aria-label="Main">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#certs">Certifications</a>
+        <a href="#contact">Contact</a>
+        <a href="https://www.linkedin.com/in/roshni-kurian" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/RoshniKurian" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+    <div class="container drawer" id="drawer" aria-hidden="true">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#certs">Certifications</a>
+      <a href="#contact">Contact</a>
+      <a href="https://www.linkedin.com/in/roshni-kurian" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/RoshniKurian" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </nav>
+
+  <!-- ===== Hero ===== -->
+  <header class="hero" id="home">
+    <div class="container hero-grid">
+      <div>
+        <div class="eyebrow">Available for Opportunities</div>
+        <div class="title">Building reliable data pipelines and practical analytics.</div>
+        <p class="lede">
+          I work with SQL, Python, HDFS, and Hive; and use Excel, Power BI, and statistical techniques (incl. A/B testing)
+          to support clear, timely decisions. Familiar with SPSS. Open to Data Engineer, Data Analyst, and Business Analyst roles.
+        </p>
+        <div class="hero-actions">
+          <a class="btn" href="#projects">View Projects</a>
+          <a class="btn secondary" href="mailto:roshni.rose21@gmail.com">Email Me</a>
+          <a class="btn secondary" href="https://roshni_kurian.github.io/Portfolio/" target="_blank" rel="noopener">Portfolio</a>
+          <a class="btn" href="<!-- TODO: replace with your resume link --> https://drive.google.com/file/d/1CuTlKaO4lTjSKQa00uLiZE-c4v1JiPpz/view?usp=drive_link" target="_blank" rel="noopener">Resume</a>
+        </div>
+
+        <div class="facts" aria-hidden="false">
+          <div class="fact"><div class="n">SQL · Python</div><div class="p-meta">Core tooling</div></div>
+          <div class="fact"><div class="n">HDFS · Hive</div><div class="p-meta">Big Data</div></div>
+          <div class="fact"><div class="n">Excel · Power BI</div><div class="p-meta">Reporting</div></div>
+        </div>
+      </div>
+
+      <aside class="hero-card" aria-label="Snapshot">
+        <div class="eyebrow">Snapshot</div>
+        <ul class="clean">
+          <li>PG Diploma in Data Science (<b>Data Engineering</b>) — IIIT Bangalore</li>
+          <li>MCA — Amrita Vishwa Vidyapeetham</li>
+          <li>Experience at Amazon · Infosys · Maveric Systems</li>
+        </ul>
+        <div class="kv" style="margin-top:.8rem">
+          <span>SQL</span><span>Python</span><span>HDFS</span><span>Hive</span><span>Excel</span><span>Power BI</span><span>SPSS</span><span>A/B Testing</span>
+        </div>
+      </aside>
+    </div>
+  </header>
+
+  <!-- ===== About ===== -->
+  <section id="about">
+    <div class="container">
+      <h2>About</h2>
+      <p class="sub">
+        Data Engineer with experience in data ingestion, transformation, and reporting. Comfortable with SQL, Python, and
+        the Hadoop ecosystem (HDFS, Hive). I focus on clarity, reproducibility, and business-aligned analytics.
+      </p>
+      <div class="grid-3">
+        <article class="card">
+          <h3>What I do</h3>
+          <ul class="clean">
+            <li>Design and maintain SQL/Hive models and ETL workflows</li>
+            <li>Automate reporting and QA checks with Python/Excel</li>
+            <li>Build clear dashboards in Power BI</li>
+          </ul>
+          <div class="chips">
+            <span class="chip">Pipelines</span><span class="chip">Data Modeling</span><span class="chip">QA/Validation</span>
+          </div>
+        </article>
+        <article class="card">
+          <h3>Where I’ve worked</h3>
+          <ul class="clean">
+            <li>Amazon — Transaction risk/fraud investigations and tooling</li>
+            <li>Maveric Systems — Big Data assimilation (HDFS, Hive), SQL, Python</li>
+            <li>Infosys — Operations, scripts, and process reliability</li>
+          </ul>
+          <div class="chips">
+            <span class="chip">Fraud/Anomaly</span><span class="chip">Big Data</span><span class="chip">Ops</span>
+          </div>
+        </article>
+        <article class="card">
+          <h3>Currently exploring</h3>
+          <ul class="clean">
+            <li>Machine Learning & GenAI for analytics</li>
+            <li>Efficient data quality monitoring</li>
+            <li>Scalable reporting patterns</li>
+          </ul>
+          <div class="chips">
+            <span class="chip">GenAI</span><span class="chip">ML</span><span class="chip">DQ</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Skills ===== -->
+  <section id="skills">
+    <div class="container">
+      <h2>Skills</h2>
+      <p class="sub">Core tools & techniques I use.</p>
+
+      <div class="grid-3">
+        <article class="card">
+          <h3>Languages & Libraries</h3>
+          <p class="sub">SQL · Python · pandas · NumPy · (familiar) SPSS</p>
+          <div class="chips">
+            <span class="chip">Window Functions</span><span class="chip">Joins/CTEs</span><span class="chip">Pandas</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>Platforms & Storage</h3>
+          <p class="sub">HDFS · Hive · Excel · ServiceNow (process)</p>
+          <div class="chips">
+            <span class="chip">Hadoop Ecosystem</span><span class="chip">Partitions</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>BI & Analytics</h3>
+          <p class="sub">Power BI · A/B testing · Reporting & QA</p>
+          <div class="chips">
+            <span class="chip">Dashboards</span><span class="chip">RFM</span><span class="chip">KPI Design</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Projects ===== -->
+  <section id="projects">
+    <div class="container">
+      <h2>Projects</h2>
+      <p class="sub">Representative, resume-aligned work. More on my Portfolio and GitHub.</p>
+
+      <div class="grid-3">
+        <!-- Project 1 -->
+        <article class="card">
+          <div class="thumb" style="background:url('https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1200&auto=format&fit=crop') center/cover"></div>
+          <h3>E-commerce RFM Segmentation</h3>
+          <p class="p-meta">
+            Segmented customers with RFM using Python (pandas/NumPy); created Power BI views for targeting and retention planning.
+          </p>
+          <div class="chips">
+            <span class="chip">Python</span><span class="chip">Power BI</span><span class="chip">RFM</span>
+          </div>
+          <p class="p-meta" style="margin-top:.6rem">
+            <a href="https://roshni_kurian.github.io/Portfolio/" target="_blank" rel="noopener">View in Portfolio →</a>
+          </p>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="card">
+          <div class="thumb" style="background:url('https://images.unsplash.com/photo-1559757175-08c6d5b3e556?q=80&w=1200&auto=format&fit=crop') center/cover"></div>
+          <h3>Hospital Operations Analytics</h3>
+          <p class="p-meta">
+            Explored multi-month hospital data; correlated occupancy with responsiveness/safety; delivered a Power BI dashboard for staffing signals.
+          </p>
+          <div class="chips">
+            <span class="chip">SQL</span><span class="chip">Python</span><span class="chip">Power BI</span>
+          </div>
+          <p class="p-meta" style="margin-top:.6rem">
+            <a href="https://roshni_kurian.github.io/Portfolio/" target="_blank" rel="noopener">View in Portfolio →</a>
+          </p>
+        </article>
+
+        <!-- Project 3 -->
+        <article class="card">
+          <div class="thumb" style="background:url('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=1200&auto=format&fit=crop') center/cover"></div>
+          <h3>Big Data Assimilation (Maveric)</h3>
+          <p class="p-meta">
+            Worked with HDFS/Hive for ingestion and transformation; authored onboarding docs to reduce ramp-up time.
+          </p>
+          <div class="chips">
+            <span class="chip">HDFS</span><span class="chip">Hive</span><span class="chip">ETL</span>
+          </div>
+          <p class="p-meta" style="margin-top:.6rem">
+            <a href="https://github.com/RoshniKurian" target="_blank" rel="noopener">GitHub Profile →</a>
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Certifications / Badges ===== -->
+  <section id="certs">
+    <div class="container">
+      <h2>Certifications & Badges</h2>
+      <p class="sub">Verified education and credentials.</p>
+
+      <div class="grid-3">
+        <article class="card">
+          <h3>PG Diploma — Data Science</h3>
+          <p class="p-meta">Specialization: Data Engineering</p>
+          <p class="sub">IIIT Bangalore</p>
+          <div class="chips">
+            <span class="chip">Data Engineering</span><span class="chip">Analytics</span>
+          </div>
+        </article>
+
+        <!-- (Optional examples you can add later) -->
+        <article class="card">
+          <h3>Power BI (add badge)</h3>
+          <p class="sub">Upload a link to your badge or certificate.</p>
+          <div class="chips">
+            <span class="chip">Power BI</span><span class="chip">Dashboards</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>Python (add badge)</h3>
+          <p class="sub">Link to course/cert completion if available.</p>
+          <div class="chips">
+            <span class="chip">Python</span><span class="chip">pandas</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Contact ===== -->
+  <section id="contact">
+    <div class="container">
+      <h2>Contact</h2>
+      <p class="sub">I’m open to relevant roles and projects. Feel free to reach out.</p>
+
+      <div class="grid-3">
+        <article class="card" aria-label="Contact details">
+          <h3>Reach me</h3>
+          <ul class="clean">
+            <li><b>Email:</b> <a href="mailto:roshni.rose21@gmail.com">roshni.rose21@gmail.com</a></li>
+            <li><b>LinkedIn:</b> <a href="https://www.linkedin.com/in/roshni-kurian" target="_blank" rel="noopener">linkedin.com/in/roshni-kurian</a></li>
+            <li><b>GitHub:</b> <a href="https://github.com/RoshniKurian" target="_blank" rel="noopener">github.com/RoshniKurian</a></li>
+            <li><b>Portfolio:</b> <a href="https://roshni_kurian.github.io/Portfolio/" target="_blank" rel="noopener">roshni_kurian.github.io/Portfolio</a></li>
+          </ul>
+        </article>
+
+        <article class="card" aria-label="Quick message">
+          <h3>Quick message</h3>
+          <form id="contactForm" onsubmit="sendMsg(event)">
+            <label for="name" class="sub">Your name</label>
+            <input id="name" name="name" required style="width:100%;padding:.7rem;border:1px solid var(--line);border-radius:10px">
+
+            <label for="email" class="sub" style="display:block;margin-top:.6rem">Your email</label>
+            <input id="email" name="email" type="email" required style="width:100%;padding:.7rem;border:1px solid var(--line);border-radius:10px">
+
+            <label for="message" class="sub" style="display:block;margin-top:.6rem">Message</label>
+            <textarea id="message" name="message" rows="4" required style="width:100%;padding:.7rem;border:1px solid var(--line);border-radius:10px"></textarea>
+
+            <div style="display:flex;gap:.6rem;align-items:center;margin-top:.7rem">
+              <button class="btn" type="submit">Send</button>
+              <button class="btn secondary" type="button" onclick="copyEmail()">Copy Email</button>
+            </div>
+            <p id="formStatus" class="sub" aria-live="polite" style="min-height:1.2em"></p>
+          </form>
+        </article>
+
+        <article class="card" aria-label="Availability">
+          <h3>Availability</h3>
+          <p class="sub">Open to Data Engineer, Data Analyst, and Business Analyst roles. Remote-friendly; relocation considered.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">© <span id="year"></span> Roshni Kurian</div>
+  </footer>
+
+  <script>
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Mobile menu
+    const btn = document.getElementById('menuBtn');
+    const drawer = document.getElementById('drawer');
+    if(btn && drawer){
+      btn.addEventListener('click', ()=>{
+        const open = drawer.classList.toggle('open');
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        drawer.setAttribute('aria-hidden', open ? 'false' : 'true');
+      });
+    }
+
+    // Contact demo (stores locally, no backend)
+    function sendMsg(e){
+      e.preventDefault();
+      const n = document.getElementById('name').value.trim();
+      const mail = document.getElementById('email').value.trim();
+      const msg = document.getElementById('message').value.trim();
+      const s = document.getElementById('formStatus');
+      if(!n || !mail || !msg){ s.textContent='Please complete all fields.'; return; }
+      const rec = { name:n, email:mail, message:msg, time:new Date().toISOString() };
+      const store = JSON.parse(localStorage.getItem('rk_contact') || '[]'); store.push(rec);
+      localStorage.setItem('rk_contact', JSON.stringify(store));
+      s.textContent = `Thanks, ${n}! Your message was saved locally for this demo.`;
+      e.target.reset();
+    }
+    function copyEmail(){
+      navigator.clipboard?.writeText('roshni.rose21@gmail.com').then(()=>{
+        const s = document.getElementById('formStatus');
+        s.textContent = 'Email copied to clipboard.';
+        setTimeout(()=> s.textContent='', 2500);
+      });
+    }
+  </script>
+</body>
+</html>
