@@ -3,10 +3,12 @@
   <div class="container nav-inner">
     <ul class="nav-links">
       <li><a class="link" href="#about">About Me</a></li>
-      <li><a class="link" href="#projects">Projects</a></li>
-      <li><a class="link" href="#certifications">Certifications</a></li>
       <li><a class="link" href="#skills">Skills</a></li>
-      <li><a class="link" href="#connect">Connect with Me</a></li>
+      <li><a class="link" href="#projects">Projects</a></li>
+      <li><a class="link" href="#projects">Case Studies</a></li>
+      <li><a class="link" href="#projects">Dashboards</a></li>
+      <li><a class="link" href="#certifications">Certifications</a></li>
+      <li><a class="link" href="#connect">Contact Me</a></li>
     </ul>
   </div>
 </nav>
@@ -111,6 +113,13 @@ body {
         Experience spans <strong>Amazon</strong>, <strong>Maveric Systems</strong>, and <strong>Infosys</strong>, 
         with proficiency in <strong>SQL, Python, Power BI, Excel, Hive, Hadoop</strong>, and familiarity with <strong>SPSS</strong> and <strong>A/B Testing</strong>. 
       </p>
+      <!-- Action Buttons -->
+      <div class="about-actions">
+      <a class="btn" href="./assets/Roshni_Kurian_Resume.pdf" download="Roshni_Kurian_Resume.pdf" data-force-download>
+       ⬇️ Download Resume </a>
+      <a class="btn secondary" href="mailto:roshni.rose21@gmail.com">
+       ✉️ Email Me </a>
+      </div>
     </div>
   </div>
 
@@ -194,6 +203,41 @@ body {
       </p>
     </div>
   </div>
+  .about-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.25rem;
+  border-radius: 30px; /* <-- makes it rounded rectangle */
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  border: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.btn.secondary {
+  background: transparent;
+  border: 1.5px solid var(--brand);
+  color: var(--brand);
+}
+
+.btn.secondary:hover {
+  background: var(--brand);
+  color: #fff;
+}
 
   <!-- THREE INFO CARDS -->
   <div class="container info-grid">
