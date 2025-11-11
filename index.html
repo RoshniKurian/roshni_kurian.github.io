@@ -13,6 +13,29 @@
   </div>
 </nav>
 
+/* ========= THEME PACK (5 styles) ========= */
+body[data-theme="aurora"]{
+  --bg:#0b0d12; --bg-2:#0e1220; --card:#111523; --text:#e6e8ef; --muted:#a8b0c3;
+  --brand:#7c3aed; --brand-2:#22d3ee; --line:rgba(255,255,255,.08);
+}
+body[data-theme="light"]{
+  --bg:#ffffff; --bg-2:#f7f8fb; --card:#ffffff; --text:#0f172a; --muted:#475569;
+  --brand:#4f46e5; --brand-2:#06b6d4; --line:#e5e7eb;
+}
+body[data-theme="slate"]{
+  --bg:#0a0f16; --bg-2:#0b1220; --card:#0f1722; --text:#e5f0ff; --muted:#9fb3c8;
+  --brand:#10b981; --brand-2:#22d3ee; --line:rgba(255,255,255,.09);
+}
+body[data-theme="sunset"]{
+  --bg:#0c0a14; --bg-2:#120d1e; --card:#141022; --text:#f5f6fb; --muted:#cbbbdc;
+  --brand:#a855f7; --brand-2:#f97316; --line:rgba(255,255,255,.1);
+}
+body[data-theme="paper"]{
+  --bg:#f7f7fb; --bg-2:#f2f4f8; --card:#ffffff; --text:#0b1220; --muted:#4b5563;
+  --brand:#1e3a8a; --brand-2:#2563eb; --line:#e6e8ef;
+}
+
+
 <style>
 /* ======= NAVBAR STYLES ======= */
 :root {
@@ -364,3 +387,4 @@ body {
 /* Chips */
 .chips{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:.6rem}
 .chip{display:inline-block;padding:.38rem .68rem;border-radius:999px;font-size:.82rem;color:var(--muted);background:linear-gradient(var(--card),var(--card)) padding-box,linear-gradient(120deg, var(--brand), var(--brand-2)) border-box;border:1px solid transparent}
+
