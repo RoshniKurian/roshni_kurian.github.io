@@ -1,390 +1,61 @@
-<!-- ===== NAVIGATION BAR ===== -->
-<nav class="nav">
-  <div class="container nav-inner">
-    <ul class="nav-links">
-      <li><a class="link" href="#about">About Me</a></li>
-      <li><a class="link" href="#skills">Skills</a></li>
-      <li><a class="link" href="#projects">Projects</a></li>
-      <li><a class="link" href="#projects">Case Studies</a></li>
-      <li><a class="link" href="#projects">Dashboards</a></li>
-      <li><a class="link" href="#certifications">Certifications</a></li>
-      <li><a class="link" href="#connect">Contact Me</a></li>
-    </ul>
-  </div>
-</nav>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Roshni Kurian — Portfolio</title>
+  <link rel="icon" href="assets/favicon.png" />
+  <!-- Google font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <!-- site stylesheet -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
 
-/* ========= THEME PACK (5 styles) ========= */
-body[data-theme="aurora"]{
-  --bg:#0b0d12; --bg-2:#0e1220; --card:#111523; --text:#e6e8ef; --muted:#a8b0c3;
-  --brand:#7c3aed; --brand-2:#22d3ee; --line:rgba(255,255,255,.08);
-}
-body[data-theme="light"]{
-  --bg:#ffffff; --bg-2:#f7f8fb; --card:#ffffff; --text:#0f172a; --muted:#475569;
-  --brand:#4f46e5; --brand-2:#06b6d4; --line:#e5e7eb;
-}
-body[data-theme="slate"]{
-  --bg:#0a0f16; --bg-2:#0b1220; --card:#0f1722; --text:#e5f0ff; --muted:#9fb3c8;
-  --brand:#10b981; --brand-2:#22d3ee; --line:rgba(255,255,255,.09);
-}
-body[data-theme="sunset"]{
-  --bg:#0c0a14; --bg-2:#120d1e; --card:#141022; --text:#f5f6fb; --muted:#cbbbdc;
-  --brand:#a855f7; --brand-2:#f97316; --line:rgba(255,255,255,.1);
-}
-body[data-theme="paper"]{
-  --bg:#f7f7fb; --bg-2:#f2f4f8; --card:#ffffff; --text:#0b1220; --muted:#4b5563;
-  --brand:#1e3a8a; --brand-2:#2563eb; --line:#e6e8ef;
-}
-
-
-<style>
-/* ======= NAVBAR STYLES ======= */
-:root {
-  --brand: #7c3aed;
-  --brand-2: #22d3ee;
-  --bg: #f7f7fb;
-  --text: #0b1220;
-  --muted: #4b5563;
-  --line: #e6e8ef;
-}
-
-body {
-  margin: 0;
-  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  background: var(--bg);
-  color: var(--text);
-}
-
-/* Nav wrapper */
-.nav {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  background: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.85));
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--line);
-}
-
-/* Container setup */
-.container {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 1.2rem;
-}
-
-/* Layout */
-.nav-inner {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0.8rem 0;
-}
-
-/* Links */
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 1.2rem;
-  margin: 0;
-  padding: 0;
-}
-.nav-links a {
-  text-decoration: none;
-  color: var(--muted);
-  font-weight: 600;
-  font-size: 0.95rem;
-  padding: 0.45rem 0.9rem;
-  border-radius: 10px;
-  transition: all 0.25s ease;
-}
-.nav-links a:hover,
-.nav-links a.active {
-  background: color-mix(in oklab, var(--brand) 18%, transparent);
-  color: var(--text);
-  border: 1px solid color-mix(in oklab, var(--brand) 25%, transparent);
-}
-
-/* Responsive */
-@media (max-width: 720px) {
-  .nav-inner {
-    flex-direction: column;
-    gap: 0.8rem;
-  }
-  .nav-links {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-}
-</style>
-
-<!-- ===== ABOUT ME SECTION ===== -->
-<section id="about" class="about">
-  <div class="container about-grid">
-
-    <!-- LEFT: PROFILE PHOTO -->
-    <div class="photo-card">
-      <img src="./assets/profile.jpg" alt="Roshni Kurian" class="profile-photo">
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="container nav-inner">
+      <ul class="nav-links">
+        <li><a href="#about">About Me</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#certifications">Certifications</a></li>
+        <li><a href="#connect">Connect with Me</a></li>
+      </ul>
     </div>
+  </nav>
 
-    <!-- RIGHT: INTRO -->
-    <div class="intro">
-      <h1 class="name">Roshni Kurian</h1>
-      <h3 class="role">Data Engineer · Data Analyst · Business Analyst</h3>
-      <!-- Open to Work Tag -->
-      <span class="availability-tag">🟢 Open to Work</span>
-      <p class="summary">
-        Data Engineer and Analytics Professional with 4+ years of cross-industry experience in E-commerce, Banking, and IT Operations. 
-        Skilled in building reliable data pipelines and delivering insights that bridge technology and business. 
-        <br><br>
-        Experience spans <strong>Amazon</strong>, <strong>Maveric Systems</strong>, and <strong>Infosys</strong>, 
-        with proficiency in <strong>SQL, Python, Power BI, Excel, Hive, Hadoop</strong>, and familiarity with <strong>SPSS</strong> and <strong>A/B Testing</strong>. 
-      </p>
-      <!-- Action Buttons -->
-      <div class="about-actions">
-      <a class="btn" href="./assets/Roshni_Kurian_Resume.pdf" download="Roshni_Kurian_Resume.pdf" data-force-download>
-       ⬇️ Download Resume </a>
-      <a class="btn secondary" href="mailto:roshni.rose21@gmail.com">
-       ✉️ Email Me </a>
+  <!-- ABOUT (hero + cards) -->
+  <main>
+    <section id="about" class="about">
+      <div class="container about-grid">
+        <div class="photo-card">
+          <img src="assets/profile.jpg" alt="Roshni Kurian" class="profile-photo">
+        </div>
+
+        <div class="intro">
+          <h1 class="name">Roshni Kurian</h1>
+          <h3 class="role">Data Engineer · Data Analyst · Business Analyst</h3>
+          <span class="availability-tag">🟢 Open to Work</span>
+
+          <p class="summary">
+            Data Engineer and Analytics Professional with 4+ years ... (short summary)
+          </p>
+
+          <div class="about-actions">
+            <a class="btn" href="assets/Roshni_Kurian_Resume.pdf" download>⬇️ Download Resume</a>
+            <a class="btn secondary" href="mailto:roshni.rose21@gmail.com">✉️ Email Me</a>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
 
-  <!-- THREE INFO CARDS -->
-  <div class="container info-grid">
-    <article class="card">
-      <h3>🎓 Education</h3>
-      <ul>
-        <li><strong>PG Diploma in Data Science (Data Engineering)</strong> — IIIT Bangalore</li>
-        <li><strong>Master of Computer Applications (MCA)</strong> — Amrita Vishwa Vidyapeetham</li>
-        <li><strong>Bachelor of Computer Applications (BCA)</strong> — Amrita Vishwa Vidyapeetham</li>
-      </ul>
-    </article>
+      <div class="container info-grid">
+        <!-- cards (education / experience / highlights) -->
+      </div>
+    </section>
+  </main>
 
-    <article class="card">
-      <h3>💼 Experience</h3>
-      <ul>
-        <li><strong>Maveric Systems</strong> — Data Engineer</li>
-        <li><strong>Amazon Development Center</strong> — Transaction Risk Investigator</li>
-        <li><strong>Infosys Technologies Ltd. </strong> — Senior Operations Executive</li>
-         <li><strong>SCMS Cochin School of Business </strong> — Assistant Professor</li>
-      </ul>
-    </article>
-
-    <article class="card">
-      <h3>✨ Highlights</h3>
-        <ul>
-          <li>Published a paper in a Scopus-indexed journal (IJRTE) titled 
-          <em>“The use of study apps among high school students — a data mining approach.”</em> 
-      <br>
-          <a href="https://www.ijrte.org/wp-content/uploads/papers/v7i6/F2505037619.pdf"
-             target="_blank"
-             rel="noopener noreferrer"
-             class="paper-link">
-             View Publication ↗
-          </a>
-          </li>
-          <li>Resource Person for the 
-          <a href="https://www.linkedin.com/posts/scmscochin_ai-analytics-bootcamp-activity-7234952362912534529-1bna/"
-             target="_blank"
-             rel="noopener noreferrer"
-             class="paper-link">
-             AI & Analytics Bootcamp
-          </a> — Organized by SCMS Cochin School of Business, 2024.
-          </li>
-          <li> Resource Person for the 
-          <a href="https://scms.edu.in/faculty-development-programme-2024-on-recent-trends-in-teaching-and-research/"
-             target="_blank"
-             rel="noopener noreferrer"
-             class="paper-link">
-             Faculty Development Program (FDP)
-          </a> organized by SSTM on “Recent Trends in Teaching & Research” — Delivered a session on 
-          <em>“Leveraging AI tools for Teaching.”</em>
-          </li>
-    </ul>
-    </article>
-  </div>
-</section>
-
-<style>
-<!-- ===== ABOUT ME SECTION ===== -->
-<section id="about" class="about">
-  <div class="container about-grid">
-
-    <!-- LEFT: PROFILE PHOTO -->
-    <div class="photo-card">
-      <img src="./assets/profile.jpg" alt="Roshni Kurian" class="profile-photo">
-    </div>
-
-    <!-- RIGHT: INTRO -->
-    <div class="intro">
-      <h1 class="name">Roshni Kurian</h1>
-      <h3 class="role">Data Engineer · Data Analyst · Business Analyst</h3>
-      <p class="summary">
-        Data Engineer and Analytics Professional with 4+ years of cross-industry experience in E-commerce, Banking, and IT Operations. 
-        Skilled in building reliable data pipelines and delivering insights that bridge technology and business. 
-        <br><br>
-        Experience spans <strong>Amazon</strong>, <strong>Maveric Systems</strong>, and <strong>Infosys</strong>, 
-        with proficiency in <strong>SQL, Python, Power BI, Excel, Hive, Hadoop</strong>, and familiarity with <strong>SPSS</strong> and <strong>A/B Testing</strong>. 
-        Passionate about clarity, reproducibility, and actionable storytelling.
-      </p>
-    </div>
-  </div>
-  .about-actions {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-  margin-top: 1.5rem;
-}
-
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.75rem 1.25rem;
-  border-radius: 30px; /* <-- makes it rounded rectangle */
-  font-weight: 600;
-  cursor: pointer;
-  text-decoration: none;
-  border: none;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-}
-
-.btn.secondary {
-  background: transparent;
-  border: 1.5px solid var(--brand);
-  color: var(--brand);
-}
-
-.btn.secondary:hover {
-  background: var(--brand);
-  color: #fff;
-}
-
-  <!-- THREE INFO CARDS -->
-  <div class="container info-grid">
-    <article class="card">
-      <h3>🎓 Education</h3>
-      <ul>
-        <li><strong>PG Diploma in Data Science (Data Engineering)</strong> — IIIT Bangalore</li>
-        <li><strong>Master of Computer Applications (MCA)</strong> — Amrita Vishwa Vidyapeetham</li>
-        <li><strong>Bachelor of Computer Applications (BCA)</strong> — Amrita Vishwa Vidyapeetham</li>
-      </ul>
-    </article>
-
-    <article class="card">
-      <h3>💼 Experience</h3>
-      <ul>
-        <li><strong>Data Engineer</strong> — Maveric Systems</li>
-        <li><strong>Data Associate</strong> — Amazon</li>
-        <li><strong>System Engineer</strong> — Infosys</li>
-      </ul>
-    </article>
-
-    <article class="card">
-      <h3>✨ Highlights</h3>
-      <ul>
-        <li>Hands-on experience with Hadoop ecosystem (HDFS, Hive)</li>
-        <li>Automated data validation and reporting pipelines</li>
-        <li>Delivered insights on fraud-risk and operations analytics</li>
-      </ul>
-    </article>
-  </div>
-</section>
-
-<style>
-/* ===== ABOUT ME SECTION STYLES ===== */
-.about {
-  padding: 4rem 0 2rem;
-  border-bottom: 1px solid var(--line);
-}
-
-.about-grid {
-  display: grid;
-  grid-template-columns: 0.7fr 1.3fr;
-  align-items: center;
-  gap: 2rem;
-}
-@media (max-width: 900px) {
-  .about-grid {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-  .photo-card {
-    justify-self: center;
-  }
-}
-
-.profile-photo {
-  width: 220px;
-  height: 220px;
-  object-fit: cover;
-  border-radius: 50%;
-  border: 4px solid var(--line);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-}
-
-.name {
-  font-size: 2.2rem;
-  font-weight: 800;
-  margin: 0.3rem 0 0.4rem;
-}
-
-.role {
-  font-weight: 600;
-  color: var(--brand);
-  margin-top: 0;
-}
-
-.summary {
-  margin-top: 1rem;
-  color: var(--muted);
-  font-size: 1rem;
-  line-height: 1.6;
-}
-
-/* Info cards */
-.info-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
-  margin-top: 3rem;
-}
-@media (max-width: 900px) {
-  .info-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-.card {
-  background: #fff;
-  border: 1px solid var(--line);
-  border-radius: 16px;
-  padding: 1.5rem;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-.card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
-}
-
-.card h3 {
-  margin-top: 0;
-  color: var(--text);
-}
-.card ul {
-  margin: 0.5rem 0 0;
-  padding-left: 1.2rem;
-  color: var(--muted);
-  line-height: 1.5;
-}
-</style>
-
-/* Chips */
-.chips{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:.6rem}
-.chip{display:inline-block;padding:.38rem .68rem;border-radius:999px;font-size:.82rem;color:var(--muted);background:linear-gradient(var(--card),var(--card)) padding-box,linear-gradient(120deg, var(--brand), var(--brand-2)) border-box;border:1px solid transparent}
-
+  <!-- scripts -->
+  <script src="js/main.js" defer></script>
+</body>
+</html>
