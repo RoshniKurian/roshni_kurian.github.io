@@ -163,8 +163,32 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--brand-2);outline-offs
 }
 
 /* Chips */
-.chips{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:.6rem}
-.chip{display:inline-block;padding:.38rem .68rem;border-radius:999px;font-size:.82rem;color:var(--muted);background:linear-gradient(var(--card),var(--card)) padding-box,linear-gradient(120deg, var(--brand), var(--brand-2)) border-box;border:1px solid transparent}
+/* ===== CHIP STYLING ===== */
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 1rem;
+}
+
+.chip {
+  display: inline-block;
+  padding: 0.45rem 0.9rem;
+  font-size: 0.88rem;
+  font-weight: 500;
+  border-radius: 999px;
+  color: var(--muted);
+  background: linear-gradient(var(--card), var(--card)) padding-box,
+              linear-gradient(120deg, var(--brand), var(--brand-2)) border-box;
+  border: 1px solid transparent;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.chip:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
 
 /* About & Skills */
 .about-grid,.skills-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.1rem;margin-top:1rem}
@@ -334,19 +358,25 @@ footer{padding:2rem 0;border-top:1px solid var(--line);color:var(--muted);text-a
 <section id="about">
   <div class="container">
     <h2 class="reveal">About</h2>
-    <p class="sub reveal">I’m a Data & BI Analyst who ships end-to-end analytics—clean SQL models, performant DAX, and Python automations—so leaders can make fast, confident decisions.</p>
-
     <div class="about-grid">
       <article class="card reveal">
-        <h3>Profile</h3>
-        <p>Hands-on analyst with production projects across SQL and Python. Fluent in <strong>complex joins</strong>, <strong>window functions</strong>, query optimization; build <strong>Pandas</strong> pipelines & ML experiments; model with <strong>DAX</strong> for Power BI and publish visuals in <strong>Tableau</strong>.</p>
+        <h3>Background</h3>
+        <ul class="edu-list">
+          <li><strong>Post Graduate Diploma in Data Science (Data Engineering)</strong> — IIIT Bangalore</li>
+          <li><strong>Master of Computer Applications (MCA)</strong> — Amrita Vishwa Vidyapeetham</li>
+          <li><strong>Bachelor of Computer Applications (BCA)</strong> — Amrita Vishwa Vidyapeetham</li>
+        </ul>
+        <p style="margin-top:0.8rem">
+            A technically grounded academic background combining computing and data engineering, 
+            providing a solid base in analytical thinking, structured problem-solving, and technology-driven decision making.
+        </p>
         <div class="chips">
-          <span class="chip">Location: Minneapolis, MN</span>
-          <span class="chip">Open to Remote</span>
-          <span class="chip">Open to Relocation</span>
+          <span class="chip">📍 Current Location: Kerala, India</span>
+          <span class="chip">🌎 Work Experience: Mysore · Bangalore · Kochi</span>
+          <span class="chip">💼 Open to Relocation & Remote </span>
         </div>
       </article>
-
+      
       <article class="card reveal">
         <h3>Education</h3>
         <ul class="edu-list">
