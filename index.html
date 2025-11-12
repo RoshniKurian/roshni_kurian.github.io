@@ -191,8 +191,13 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--brand-2);outline-offs
 }
 
 /* About &  */
-.about-grid,.-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.1rem;margin-top:1rem}
-@media (max-width:900px){.about-grid,.-grid{grid-template-columns:1fr}}
+.about-grid { 
+  display: grid; 
+  grid-template-columns: repeat(3, minmax(0, 1fr)); 
+  gap: 1.1rem; margin-top: 1rem; 
+}
+@media (max-width: 900px) { .about-grid { grid-template-columns: 1fr; } }
+
 .skill-card{background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.02));border:1px solid var(--line);border-radius:18px;padding:1.1rem;box-shadow:var(--shadow)}
 .skill-card .chip{background:color-mix(in oklab, var(--brand) 18%, transparent);color:#e9e1ff;border-color:color-mix(in oklab, var(--brand) 35%, transparent)}
 .edu-list{border-left:2px dashed var(--line);padding-left:1rem;margin:.2rem 0 0}
@@ -416,9 +421,10 @@ footer{padding:2rem 0;border-top:1px solid var(--line);color:var(--muted);text-a
           <li><strong>Bachelor of Computer Applications (BCA)</strong> — Amrita Vishwa Vidyapeetham</li>
         </ul>
         <p style="margin-top:0.8rem; font-size:0.9rem; color:var(--muted);">
-            Solid academic foundation in computer applications and data engineering, 
-            supporting strong analytical and technical  relevant to data-driven roles.
+          Solid academic foundation in computer applications and data engineering, 
+          supporting strong analytical and technical skills for data-driven roles.
         </p>
+
         <div class="chips">
           <span class="chip">📍 Current Location: Kerala, India</span>
           <span class="chip">🌎 Work Experience: Mysore · Bangalore · Kochi</span>
@@ -537,9 +543,17 @@ footer{padding:2rem 0;border-top:1px solid var(--line);color:var(--muted);text-a
     </div>
   </div>
 </section>
+<!-- Certifications -->
+  <section id="cert">
+  <div class="container">
+    <h2 class="reveal">Certifications</h2>
+    <p class="sub reveal">Certifications and learning highlights.</p>
+    <!-- put certification cards or a short list here -->
+  </div>
+</section>
 
 <!-- PROJECTS -->
-<section id="projects">F
+<section id="projects">
   <div class="container">
     <h2 class="reveal">Projects</h2>
     <p class="sub reveal">End-to-end analytics and automation with measurable outcomes.</p>
@@ -734,7 +748,7 @@ footer{padding:2rem 0;border-top:1px solid var(--line);color:var(--muted);text-a
         <h3>Reach me</h3>
         <p>Email: <a href="mailto:roshni.rose21@gmail.com">roshni.rose21@gmail.com</a><br>
            LinkedIn: <a href="https://www.linkedin.com/in/roshni-kurian/" target="_blank" rel="noopener">linkedin.com/in/roshni-kurian/</a><br>
-           GitHub: <a href="https://github.com/serusantosh" target="_blank" rel="noopener">github.com/serusantosh</a></p>
+           GitHub: <a href="https://github.com/RoshniKurian" target="_blank" rel="noopener">github.com/RoshniKurian</a></p>
       </article>
       <article class="card reveal">
         <h3>Quick message</h3>
