@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 
 <title>Roshni Kurian — Portfolio</title>
-<meta name="description" content="Roshni Kurian — Data & BI Analyst. SQL, Python, Power BI, Tableau. Projects, dashboards, case studies, resume, testimonials, and contact." />
+<meta name="description" content="Portfolio of Roshni Kurian — Data Engineer and Analyst with experience in SQL, Excel, Power BI, and analytics across e-commerce, banking, and education domains." />
 <meta name="author" content="Roshni Kurian" />
 <meta name="theme-color" content="#7c3aed" />
 
@@ -277,11 +277,11 @@ footer{padding:2rem 0;border-top:1px solid var(--line);color:var(--muted);text-a
 }
 
   .hero-subtitle {
-  font-size: 1.1rem;
-  font-weight: 500;
+  font-size: 1.05rem;   /* smaller */
+  font-weight: 600;
   color: var(--muted);
-  margin-top: 0.4rem;
-  letter-spacing: 0.4px;
+  margin: 0.25rem 0 0.8rem;
+  letter-spacing: 0.2px;
 }
 .small-text {
   font-size: 0.9rem;
@@ -344,7 +344,7 @@ footer{padding:2rem 0;border-top:1px solid var(--line);color:var(--muted);text-a
     <a href="#home" class="brand">Roshni Kurian<span class="dot">.</span></a>
     <ul>
       <li><a class="link" href="#about">About</a></li>
-      <li><a class="link" href="#skills"></a>Skills</li>
+      <li><a class="link" href="#skills">Skills</a></li>
       <li><a class="link" href="#projects">Projects</a></li>
       <li><a class="link" href="#cert">Certifications</a></li>
       <li><a class="link" href="#case-studies">Case Studies</a></li>
@@ -724,69 +724,6 @@ footer{padding:2rem 0;border-top:1px solid var(--line);color:var(--muted);text-a
   </div>
 </section>
 
-<!-- RESUME -->
-<section id="resume">
-  <div class="container">
-    <h2 class="reveal">Resume</h2>
-    <p class="sub reveal">Experience snapshots and a downloadable resume.</p>
-
-    <div class="seg reveal" role="tablist" aria-label="Experience Tabs">
-      <button class="seg-btn active" data-tab="exp-nexturn" role="tab" aria-selected="true">Nexturn — Data Analyst</button>
-      <button class="seg-btn" data-tab="exp-intern" role="tab" aria-selected="false">Nexturn — Data Analyst Intern</button>
-      <button class="seg-btn" data-tab="exp-citius" role="tab" aria-selected="false">CitiusTech — Business Analyst</button>
-    </div>
-
-    <div class="tab-panels">
-      <div id="exp-nexturn" class="tab-panel active card reveal" role="tabpanel">
-        <h3 style="margin-top:.1rem">Data Analyst — Nexturn</h3>
-        <ul>
-          <li>Built SQL models & Power BI dashboards (DAX, drill-through) to optimize revenue and cost.</li>
-          <li>Automated reporting with Python (Pandas) and Excel (Power Query) to reduce manual effort.</li>
-          <li>Partnered with stakeholders on KPIs, sanity checks, and clear narrative visuals.</li>
-        </ul>
-      </div>
-      <div id="exp-intern" class="tab-panel card reveal" role="tabpanel">
-        <h3 style="margin-top:.1rem">Data Analyst Intern — Nexturn</h3>
-        <ul>
-          <li>Assisted in data modeling & dashboard build; wrote reproducible SQL and documentation.</li>
-          <li>Developed data quality checks & EDA notebooks; improved refresh reliability.</li>
-        </ul>
-      </div>
-      <div id="exp-citius" class="tab-panel card reveal" role="tabpanel">
-        <h3 style="margin-top:.1rem">Business Analyst — CitiusTech</h3>
-        <ul>
-          <li>Translated ambiguous asks into measurable KPIs and dashboards for healthcare stakeholders.</li>
-          <li>Trend, cohort, and correlation analysis linking occupancy to responsiveness & outcomes.</li>
-        </ul>
-      </div>
-    </div>
-
-    <div style="margin-top:1rem;display:flex;gap:.6rem;flex-wrap:wrap" class="reveal">
-     <a class="btn" href="./santosh_seru_Resume.pdf"
-   download="Seru_Santosh_Resume.pdf" type="application/pdf" data-force-download>
-  ⬇️ Download PDF
-</a>
-    <a class="btn secondary" href="./santosh_seru_Resume.docx"
-   download="Seru_Santosh_Resume.docx">
-  ⬇️ Download DOCX
-</a> 
-    </div>
-  </div>
-</section>
-
-<!-- TESTIMONIALS -->
-<section id="testimonials">
-  <div class="container">
-    <h2 class="reveal">Testimonials</h2>
-    <p class="sub reveal">A few words from mentors and peers.</p>
-    <div class="grid grid-3">
-      <article class="card reveal"><p>“Santosh is detail-oriented and skilled at uncovering insights from complex data. His dashboards are impactful and clear.”</p><p class="meta">— Analytics Mentor</p></article>
-      <article class="card reveal"><p>“He combines SQL depth with storytelling in Power BI visuals that executives can act on immediately.”</p><p class="meta">— Senior Data Analyst</p></article>
-      <article class="card reveal"><p>“Excellent communication and ownership—consistently delivers beyond expectations.”</p><p class="meta">— Project Lead</p></article>
-    </div>
-  </div>
-</section>
-
 <!-- CONTACT -->
 <section id="contact">
   <div class="container">
@@ -811,7 +748,7 @@ footer{padding:2rem 0;border-top:1px solid var(--line);color:var(--muted);text-a
       </article>
       <article class="card reveal">
         <h3>Location & Availability</h3>
-        <p>Minneapolis, MN · Open to Remote & Relocation</p>
+        <p>Kerala, India · Open to Relocation & Remote Positions</p>
       </article>
     </div>
   </div>
@@ -839,45 +776,6 @@ function sendMsg(e){
   const s = document.getElementById('formStatus');
   s.textContent = `Thanks, ${n}! Your message has been recorded locally for demo.`;
 }
-
-// Tabs for resume experience
-(function(){
-  const buttons = document.querySelectorAll('.seg-btn');
-  const panels = document.querySelectorAll('.tab-panel');
-  buttons.forEach(btn=>{
-    btn.addEventListener('click', ()=>{
-      const id = btn.getAttribute('data-tab');
-      buttons.forEach(b=>b.classList.toggle('active', b===btn));
-      buttons.forEach(b=>b.setAttribute('aria-selected', b===btn ? 'true' : 'false'));
-      panels.forEach(p=>p.classList.toggle('active', p.id===id));
-    });
-  });
-})();
-
-// Force download helper (PDF/DOCX) – works on static hosting (GitHub Pages)
-(function(){
-  document.querySelectorAll('a[data-force-download]').forEach(link=>{
-    link.addEventListener('click', async (e)=>{
-      e.preventDefault();
-      const url = link.getAttribute('href');
-      const filename = link.getAttribute('download') || (url.split('/').pop() || 'download');
-      try {
-        const head = await fetch(url, { method:'HEAD', cache:'no-cache' });
-        if (!head.ok) throw new Error('File missing');
-        const res = await fetch(url, { cache:'no-cache' });
-        if (!res.ok) throw new Error('Fetch failed');
-        const blob = await res.blob();
-        const blobUrl = URL.createObjectURL(blob);
-        const a = document.createElement('a');
-        a.href = blobUrl; a.download = filename;
-        document.body.appendChild(a); a.click(); a.remove();
-        setTimeout(()=> URL.revokeObjectURL(blobUrl), 1000);
-      } catch (err) {
-        window.open(url, '_blank', 'noopener'); // fallback
-      }
-    });
-  });
-})();
 
 // Reveal on scroll
 (function(){
@@ -907,18 +805,3 @@ function sendMsg(e){
 </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
